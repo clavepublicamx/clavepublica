@@ -259,8 +259,31 @@ i.w,.xv-stack i.w{background:var(--good)}i.l,.xv-stack i.l{background:var(--bad)
 #v-o .org-subnav,.org-subnav{position:static!important;top:auto!important;z-index:auto!important}
 #v-o,#v-o .org-shell{overflow:visible!important}
 </style>
+<style id="cp-363-styles">
+.sync-status{margin-left:8px;font-size:12px;color:var(--muted)}.sync-status.err{color:var(--bad)}
+.sync-sql{max-height:190px;overflow:auto;font:12px/1.45 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;white-space:pre-wrap;color:var(--ink)}
+.sync-help{margin-top:14px;font-size:13px;color:var(--ink)}.sync-help summary{cursor:pointer;color:var(--accent);font-weight:700}.sync-help li{margin:8px 0}
+.sync-btns{display:flex;gap:8px;flex-wrap:wrap}.sync-err{color:var(--bad);min-height:1em}
+.org-view-panel[hidden],#v-o .org-view-panel[hidden]{display:none!important}
+.ac{display:grid;gap:14px}
+.ac-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}.ac-nav,.ac-top-btns{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ac-nav input{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px}
+.ac-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.ac-card{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}.ac-card>div:last-child{display:grid;gap:2px;min-width:0}.ac-card span{font-size:12px;color:var(--muted)}.ac-card strong{font-size:14px;color:var(--ink)}.ac-card small{font-size:11px;color:var(--muted)}
+.ac-ring{--p:0;width:64px;height:64px;border-radius:50%;flex:0 0 64px;display:grid;place-items:center;background:conic-gradient(var(--ac-c,var(--accent)) calc(var(--p)*1%),color-mix(in srgb,var(--line) 70%,transparent) 0)}.ac-ring b{width:48px;height:48px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:14px;color:var(--ink)}
+.ac-card.good{--ac-c:var(--good)}.ac-card.warn{--ac-c:var(--warn)}.ac-card.bad{--ac-c:var(--bad)}
+.ac-sec{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:8px}.ac-sec h3{margin:0 0 4px;font-size:15px;color:var(--ink)}.ac-sec h3 span{font-size:11px;color:var(--muted);margin-left:6px;font-weight:600}.ac-sec.late{border-color:var(--bad);background:var(--bad-soft)}
+.ac-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}.ac-row.done{border-color:var(--good);background:var(--good-soft)}.ac-row.done .ac-main b{text-decoration:line-through;color:var(--muted)}.ac-row.late{border-color:var(--bad)}
+.ac-check{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--surface);font:700 18px/1 inherit;cursor:pointer;display:grid;place-items:center}.ac-row.done .ac-check{background:var(--good);border-color:var(--good);color:#fff}
+.ac-main{display:grid;gap:4px;min-width:0}.ac-main b{font-size:14px;color:var(--ink);overflow-wrap:anywhere}.ac-main small{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.ac-chips{display:flex;gap:6px;flex-wrap:wrap}.ac-chips span{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 8px;background:var(--surface)}.ac-chips .bad,.ac-bad{color:var(--bad);border-color:var(--bad)}
+.ac-btns{display:flex;gap:6px;flex-wrap:wrap}
+.ac-mini{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}.ac-mini b{font-size:13px;color:var(--ink)}.ac-mini small{font-size:11px;color:var(--muted);grid-column:1}.ac-mini .ac-btns{grid-column:2;grid-row:1/3}
+.ac-bars{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:5px;align-items:end;height:150px}.ac-bar-c{display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;min-width:0}.ac-bv{font-size:10px;color:var(--muted);min-height:12px}.ac-bd{font-size:10px;color:var(--muted)}.ac-bt{flex:1;width:100%;max-width:26px;display:flex;align-items:flex-end;background:color-mix(in srgb,var(--line) 40%,transparent);border-radius:6px 6px 0 0;overflow:hidden}.ac-bt i{display:block;width:100%;background:var(--muted)}.ac-bt i.good{background:var(--good)}.ac-bt i.warn{background:var(--warn)}.ac-bt i.bad{background:var(--bad)}
+@media(max-width:520px){.ac-row{grid-template-columns:auto minmax(0,1fr)}.ac-row .ac-btns{grid-column:2}.ac-bars{gap:3px}.ac-bv{font-size:9px}}
+</style>
 </head><body>
-<title>Clave Pública 3.62</title>
+<title>Clave Pública 3.64</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b1220">
 <link rel="icon" href="icon-192.png">
@@ -645,7 +668,7 @@ body.cp-legal-open{overflow:hidden}
 <a data-cp-open="cp-terms" href="#cp-terms">Términos y condiciones</a>
 <a data-cp-open="cp-help" href="#cp-help">Ayuda</a>
 </nav>
-<div class="site-footer-meta"><span>© <span id="cp-current-year"></span> Clave Pública.</span><span>Todos los derechos reservados al titular correspondiente.</span><span>Versión 3.62</span><button type="button" class="foot-link" data-backup>Respaldo de datos</button></div>
+<div class="site-footer-meta"><span>© <span id="cp-current-year"></span> Clave Pública.</span><span>Todos los derechos reservados al titular correspondiente.</span><span>Versión 3.64</span><button type="button" class="foot-link" data-backup>Respaldo de datos</button><button type="button" class="foot-link" data-sync>Sincronización</button><span id="sync-status" class="sync-status"></span></div>
 </div>
 </footer>
 <section aria-label="Información legal y ayuda" aria-labelledby="cp-legal-title" aria-modal="true" class="cp-legal-panels" hidden="" id="cp-legal-modal" role="dialog">
@@ -1017,11 +1040,12 @@ function orgRender(){
  root.innerHTML=`<div class="org-shell">
   <div class="org-workspace">
    <div class="org-hero org-hero-new"><div class="org-heading-block"><input id="org-name" type="hidden" value="Jorge Coronel"></div><div class="org-hero-actions"><button type="button" class="btn ghost" data-backup>Respaldo</button><button class="btn ghost" id="org-add-member"></button><button class="btn" id="org-add-case">＋ Nuevo expediente</button></div></div>
-   <nav class="org-subnav" aria-label="Expedientes personales"><button type="button" class="org-subtab" data-org-view="summary">Resumen visual</button><button type="button" class="org-subtab" data-org-view="cases">Mis expedientes</button></nav>
+   <nav class="org-subnav" aria-label="Expedientes personales"><button type="button" class="org-subtab" data-org-view="summary">Resumen visual</button><button type="button" class="org-subtab" data-org-view="cases">Mis expedientes</button><button type="button" class="org-subtab" data-org-view="acts">Mis actividades</button></nav>
    <section id="org-view-summary" class="org-view-panel"><div class="org-metrics"><div class="org-metric"><span>Expedientes</span><b>${counts.cases}</b><small>En este espacio</small></div><div class="org-metric"><span>Entregables</span><b>${counts.tasks}</b><small>En tus expedientes</small></div><div class="org-metric"><span>Completados</span><b>${counts.done}</b><small>${counts.tasks?Math.round(counts.done/counts.tasks*100):0}% de los entregables</small></div><div class="org-metric"><span>Bloqueados</span><b>${counts.blocked}</b><small>${counts.active} en curso</small></div></div><section class="org-main-card org-summary-progress"><div class="org-section-head"><div><h3>Avance global de los procedimientos</h3><p>Vista rápida de la etapa y el porcentaje de tareas completadas.</p></div></div><div id="org-summary-list"></div></section></section>
    <section id="org-view-cases" class="org-view-panel" hidden>${orgPersonalDashboardHTML(d)}<section class="org-main-card"><div class="org-section-head"><div><h3>Expedientes de contratación</h3><p>Revisa el avance por procedimiento y actualiza tus etapas.</p></div><span class="org-chip">${counts.cases} expediente${counts.cases===1?'':'s'}</span></div>
     <div class="org-toolbar"><input id="org-case-search" type="search" placeholder="Buscar por expediente, institución o procedimiento…"><select id="org-case-filter" aria-label="Filtrar expedientes"><option value="all">Todos los expedientes</option><option value="open">Con tareas pendientes</option><option value="blocked">Con tareas bloqueadas</option><option value="done">Elaboración completada</option><option value="analysis">Sin análisis registrado</option></select></div><div id="org-case-list" class="org-case-list" style="margin-top:12px"></div>
    </section></section>
+   <section id="org-view-acts" class="org-view-panel" hidden></section>
    <section id="org-view-team" class="org-view-panel" hidden><section class="org-main-card"><div class="org-section-head"><div><h3>Equipo de trabajo</h3><p>Personas registradas en esta organización y rol principal asignado.</p></div><button class="btn ghost" id="org-add-member-2"></button></div><div class="org-team-list">${d.members.map(m=>`<div class="org-member"><div class="org-avatar">${orgEsc((m.name||'?').trim().slice(0,1).toUpperCase())}</div><div class="org-member-info"><b>${orgEsc(m.name)}</b><small>${orgEsc(orgRole(m.role).name)}${m.email?' · '+orgEsc(m.email):''}</small></div>${m.role!=='admin'?`<button class="mini" data-org-remove-member="${orgEsc(m.id)}" title="Eliminar integrante">×</button>`:'<span class="org-chip">Tú</span>'}</div>`).join('')}</div><p class="org-note" style="margin-top:12px">Los integrantes son registros locales de demostración; todavía no pueden iniciar sesión ni acceder desde otros dispositivos.</p></section></section>
   </div>
  </div>`;
@@ -1031,9 +1055,9 @@ function orgRender(){
  $('#org-add-member').onclick=requireOrgName(orgMemberModal);$('#org-add-member-2').onclick=requireOrgName(orgMemberModal);$('#org-add-case').onclick=requireOrgName(orgCaseModal);
  $('#org-case-search').addEventListener('input',orgRenderCases);$('#org-case-filter').addEventListener('change',orgRenderCases);
  root.querySelectorAll('[data-org-remove-member]').forEach(b=>b.onclick=()=>{const x=orgGet();const id=b.dataset.orgRemoveMember;if(x.cases.some(c=>c.tasks.some(t=>t.owner===id))&&!confirm('Esta persona tiene tareas asignadas. ¿Eliminarla y dejar esas tareas sin asignar?'))return;x.members=x.members.filter(m=>m.id!==id);x.cases.forEach(c=>c.tasks.forEach(t=>{if(t.owner===id)t.owner=''}));orgSave(x);orgRender()});
- orgRenderCases();orgRenderVisual();orgRenderSummary();orgSetView(window.__orgActiveView||'summary');
+ orgRenderCases();orgRenderVisual();orgRenderActs();orgRenderSummary();orgSetView(window.__orgActiveView||'summary');
 }
-function orgSetView(view){const name=($('#org-name')?.value||'').trim();const hasName=!!name&&name!=='Mi organización';window.__orgActiveView=['summary','team','cases'].includes(view)?view:'cases';if(!hasName&&window.__orgActiveView!=='summary'){alert('Primero escribe y guarda el nombre de tu organización.');window.__orgActiveView='summary'}document.querySelectorAll('[data-org-view]').forEach(b=>{b.classList.toggle('active',b.dataset.orgView===window.__orgActiveView);b.disabled=!hasName&&b.dataset.orgView!=='summary';b.title=b.disabled?'Primero registra el nombre de la organización':''});document.querySelectorAll('.org-view-panel').forEach(p=>p.hidden=p.id!=='org-view-'+window.__orgActiveView);}
+function orgSetView(view){const name=($('#org-name')?.value||'').trim();const hasName=!!name&&name!=='Mi organización';window.__orgActiveView=['summary','team','cases','acts'].includes(view)?view:'cases';if(!hasName&&window.__orgActiveView!=='summary'){alert('Primero escribe y guarda el nombre de tu organización.');window.__orgActiveView='summary'}document.querySelectorAll('[data-org-view]').forEach(b=>{b.classList.toggle('active',b.dataset.orgView===window.__orgActiveView);b.disabled=!hasName&&b.dataset.orgView!=='summary';b.title=b.disabled?'Primero registra el nombre de la organización':''});document.querySelectorAll('.org-view-panel').forEach(p=>p.hidden=p.id!=='org-view-'+window.__orgActiveView);if(window.__orgActiveView==='acts')orgRenderActs();}
 function orgRenderSummary(){const el=$('#org-summary-list');if(!el)return;const d=orgGet();if(!d.cases.length){el.innerHTML='<div class="org-empty"><strong>Aún no hay procedimientos</strong><p>Crea tu primer expediente para comenzar a visualizar el avance del equipo.</p><button class="btn" id="org-summary-create">＋ Crear expediente</button></div>';const b=$('#org-summary-create');if(b)b.onclick=orgCaseModal;return}el.innerHTML=d.cases.map(c=>{const pct=orgProgress(c),total=c.tasks.length,done=c.tasks.filter(t=>t.status==='Completada').length,phase=orgCurrentPhase(c);return `<article class="org-progress-row"><div class="org-progress-main"><strong>${orgEsc(c.title||'Expediente sin nombre')}</strong><small>${orgEsc(c.procedure||c.institution||'Sin número de procedimiento')} · Etapa: ${orgEsc(phase)}</small></div><div class="org-progress-bar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div><div class="org-progress-value">${pct}%<small>${done}/${total} tareas</small></div><button class="mini" data-org-open-case="${orgEsc(c.id)}">Ver</button></article>`}).join('');el.querySelectorAll('[data-org-open-case]').forEach(b=>b.onclick=()=>{orgSetView('cases');const target=document.querySelector(`[data-org-case-card="${CSS.escape(b.dataset.orgOpenCase)}"]`);if(target)target.scrollIntoView({behavior:'smooth',block:'center'})})}
 function orgCurrentPhase(c){if(!c.analysisDate)return 'Análisis pendiente';if(c.tasks.some(t=>t.phase==='Elaboración'&&t.status!=='Completada'))return 'Elaboración';if(!c.openingReviewDate&&c.openingDate)return 'Análisis de apertura';if(!c.awardDate)return 'Fallo pendiente';if(c.contractStatus!=='Firmado'||c.bondsStatus!=='Entregadas')return 'Contrato y fianzas';return 'Completado'}
 function orgRenderCases(){
@@ -1294,6 +1318,237 @@ function orgWire361(list,reopen){
   }catch(e){note.textContent='No se pudo consultar la base.'}
  });
 }
+
+/* ===== 3.63: Mis actividades (asignadas por mi jefe, con cumplimiento diario, semanal y mensual) ===== */
+const ACT_REP={none:'Una sola vez',daily:'Todos los días',weekdays:'Lunes a viernes',weekly:'Cada semana',monthly:'Cada mes'};
+const ACT_MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const actAdd=(iso,n)=>{const d=new Date(iso+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
+const actDow=iso=>new Date(iso+'T12:00:00Z').getUTCDay();
+function actOccurs(a,iso){
+ if(!a||!a.start||iso<a.start)return false;if(a.end&&iso>a.end)return false;
+ switch(a.repeat){case 'daily':return true;case 'weekdays':{const w=actDow(iso);return w>=1&&w<=5}case 'weekly':return actDow(iso)===actDow(a.start);case 'monthly':return iso.slice(8)===a.start.slice(8);default:return iso===a.start}
+}
+const actDone=(a,iso)=>!!(a.done&&a.done[iso]);
+function actStats(acts,from,to){let t=0,h=0;for(let d=from;d<=to;d=actAdd(d,1))acts.forEach(a=>{if(actOccurs(a,d)){t++;if(actDone(a,d))h++}});return {t,h,p:t?Math.round(h/t*100):null}}
+const actWeekStart=iso=>actAdd(iso,-((actDow(iso)+6)%7));
+const actList=()=>{const d=orgGet();return Array.isArray(d.acts)?d.acts:[]};
+function actSaveAll(acts){const d=orgGet();d.acts=acts;orgSave(d)}
+const actTone=p=>p==null?'':p>=80?'good':p>=50?'warn':'bad';
+function actFmtDay(iso){return new Date(iso+'T12:00:00Z').toLocaleDateString('es-MX',{timeZone:'UTC',weekday:'long',day:'numeric',month:'long'})}
+function actOverdue(acts,today){return acts.filter(a=>(!a.repeat||a.repeat==='none')&&a.start<today&&!actDone(a,a.start)).sort((x,y)=>x.start.localeCompare(y.start))}
+function actRowHTML(a,day,today,late){
+ const done=actDone(a,late?a.start:day),n=late?dayDiff(today,a.start):0,rep=a.repeat&&a.repeat!=='none';
+ const d=orgGet(),cs=a.caseId&&d.cases.find(c=>c.id===a.caseId);
+ return `<div class="ac-row ${done?'done':''} ${late?'late':''}"><button type="button" class="ac-check" data-ac-toggle="${orgEsc(a.id)}" data-ac-day="${late?a.start:day}" aria-label="${done?'Marcar como pendiente':'Marcar como hecha'}" aria-pressed="${done}">${done?'✓':''}</button><div class="ac-main"><b>${orgEsc(a.title)}</b><div class="ac-chips">${a.time?`<span>⏰ ${orgEsc(a.time)}</span>`:''}${a.boss?`<span>Me la dejó: ${orgEsc(a.boss)}</span>`:''}<span>${orgEsc(ACT_REP[a.repeat]||ACT_REP.none)}</span>${!rep?`<span>Límite: ${orgEsc(ISOshort(a.start))}</span>`:''}${late?`<span class="bad">Vencida hace ${n} d</span>`:''}${cs?`<span>${orgEsc(cs.title)}</span>`:''}</div>${a.notes?`<small>${orgEsc(a.notes)}</small>`:''}</div><div class="ac-btns"><button type="button" class="mini" data-ac-edit="${orgEsc(a.id)}">Editar</button><button type="button" class="mini" data-ac-del="${orgEsc(a.id)}">Quitar</button></div></div>`;
+}
+function actRing(label,st,sub){
+ const p=st.p,t=actTone(p);
+ return `<div class="ac-card ${t}"><div class="ac-ring" style="--p:${p==null?0:p}"><b>${p==null?'—':p+'%'}</b></div><div><span>${label}</span><strong>${st.t?`${st.h} de ${st.t} cumplidas`:'Sin actividades'}</strong><small>${sub}</small></div></div>`;
+}
+function orgRenderActs(){
+ const root=$('#org-view-acts');if(!root)return;
+ const acts=actList(),today=orgTodayISO(),day=window.__actDay||today;
+ const sd=actStats(acts,day,day),ws=actWeekStart(today),sw=actStats(acts,ws,today),ms=today.slice(0,8)+'01',sm=actStats(acts,ms,today);
+ const dayActs=acts.filter(a=>actOccurs(a,day)).sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99')||a.title.localeCompare(b.title,'es'));
+ const late=actOverdue(acts,today);
+ const bars=[];for(let i=13;i>=0;i--){const iso=actAdd(today,-i),s=actStats(acts,iso,iso);bars.push(`<div class="ac-bar-c" title="${orgEsc(ISOshort(iso))}: ${s.t?s.p+'% ('+s.h+' de '+s.t+')':'sin actividades'}"><span class="ac-bv">${s.p==null?'':s.p}</span><div class="ac-bt"><i class="${actTone(s.p)}" style="height:${s.p==null?0:Math.max(s.p,4)}%"></i></div><span class="ac-bd">${iso.slice(8)}</span></div>`)}
+ const soon=acts.filter(a=>(!a.repeat||a.repeat==='none')&&a.start>today&&dayDiff(a.start,today)<=14).sort((x,y)=>x.start.localeCompare(y.start));
+ const rec=acts.filter(a=>a.repeat&&a.repeat!=='none');
+ root.innerHTML=`<div class="ac">
+  <div class="ac-top"><div class="ac-nav"><button type="button" class="mini" data-ac-nav="-1" aria-label="Día anterior">‹</button><input type="date" id="ac-date" value="${day}" aria-label="Ver día"><button type="button" class="mini" data-ac-nav="1" aria-label="Día siguiente">›</button><button type="button" class="mini" data-ac-nav="0">Hoy</button></div><div class="ac-top-btns"><button type="button" class="btn" id="ac-new">＋ Nueva actividad</button><button type="button" class="btn ghost" id="ac-ics">Agregar a mi calendario</button></div></div>
+  <div class="ac-cards">${actRing(day===today?'Hoy':'Día '+ISOshort(day),sd,actFmtDay(day))}${actRing('Esta semana',sw,'De lunes a hoy')}${actRing('Este mes',sm,'1 de '+ACT_MES[+today.slice(5,7)-1]+' a hoy')}</div>
+  ${late.length?`<section class="ac-sec late"><h3>Vencidas sin cumplir <span>${late.length}</span></h3>${late.map(a=>actRowHTML(a,day,today,true)).join('')}</section>`:''}
+  <section class="ac-sec"><h3>${day===today?'Para hoy':'Para el '+orgEsc(ISOshort(day))} <span>${dayActs.length}</span></h3>${dayActs.length?dayActs.map(a=>actRowHTML(a,day,today,false)).join(''):'<div class="org-empty"><strong>Sin actividades este día</strong><p>Registra lo que te deja tu jefe, con su fecha límite o si se repite.</p></div>'}</section>
+  <section class="ac-sec"><h3>Cumplimiento de los últimos 14 días</h3><div class="ac-bars">${bars.join('')}</div><p class="org-note">Cada barra es el porcentaje de actividades que cumpliste ese día. Verde 80% o más, ámbar 50% o más, rojo menos.</p></section>
+  ${soon.length?`<section class="ac-sec"><h3>Con fecha límite próxima <span>${soon.length}</span></h3>${soon.map(a=>`<div class="ac-mini"><b>${orgEsc(a.title)}</b><small>${orgEsc(ISOshort(a.start))} · ${relDay(dayDiff(a.start,today))}${a.boss?' · '+orgEsc(a.boss):''}</small></div>`).join('')}</section>`:''}
+  ${rec.length?`<section class="ac-sec"><h3>Actividades que se repiten <span>${rec.length}</span></h3>${rec.map(a=>`<div class="ac-mini"><b>${orgEsc(a.title)}</b><small>${orgEsc(ACT_REP[a.repeat])}${a.time?' · '+orgEsc(a.time):''}${a.end?' · hasta '+orgEsc(ISOshort(a.end)):''}</small><span class="ac-btns"><button type="button" class="mini" data-ac-edit="${orgEsc(a.id)}">Editar</button><button type="button" class="mini" data-ac-del="${orgEsc(a.id)}">Quitar</button></span></div>`).join('')}</section>`:''}
+  <p class="org-note">El aviso en el teléfono llega por el calendario: toca «Agregar a mi calendario» y vuelve a hacerlo si cambias o agregas actividades (las que ya están se actualizan, no se duplican).</p>
+ </div>`;
+ const go=iso=>{window.__actDay=iso;orgRenderActs()};
+ root.querySelectorAll('[data-ac-nav]').forEach(b=>b.onclick=()=>{const n=+b.dataset.acNav;go(n===0?today:actAdd(day,n))});
+ const di=$('#ac-date');if(di)di.onchange=()=>{if(/^\d{4}-\d{2}-\d{2}$/.test(di.value))go(di.value)};
+ root.querySelectorAll('[data-ac-toggle]').forEach(b=>b.onclick=()=>{const all=actList(),a=all.find(x=>x.id===b.dataset.acToggle);if(!a)return;a.done=a.done||{};const k=b.dataset.acDay;if(a.done[k])delete a.done[k];else a.done[k]=true;actSaveAll(all);orgRenderActs();if(typeof renderHomeToday==='function'&&$('#home-today'))renderHomeToday()});
+ root.querySelectorAll('[data-ac-edit]').forEach(b=>b.onclick=()=>actModal(b.dataset.acEdit));
+ root.querySelectorAll('[data-ac-del]').forEach(b=>b.onclick=()=>{const a=actList().find(x=>x.id===b.dataset.acDel);if(a&&confirm('¿Quitar la actividad «'+a.title+'»? Se pierde su historial de cumplimiento.')){actSaveAll(actList().filter(x=>x.id!==a.id));orgRenderActs();if(typeof renderHomeToday==='function'&&$('#home-today'))renderHomeToday()}});
+ $('#ac-new').onclick=()=>actModal();$('#ac-ics').onclick=actICS;
+}
+function actModal(id){
+ const d=orgGet(),a=id?actList().find(x=>x.id===id):null,today=orgTodayISO();
+ const bosses=[...new Set(actList().map(x=>x.boss).filter(Boolean))];
+ orgModal(`<button class="mini" id="org-modal-close" style="float:right">Cerrar</button><h3>${a?'Editar actividad':'Nueva actividad'}</h3><p>Anota lo que te dejó tu jefe y cuándo debe estar lista.</p>
+ <form id="ac-form" class="org-form"><label class="full">Actividad<input name="title" required maxlength="160" value="${orgEsc(a?a.title:'')}" placeholder="Ej. Revisar ComprasMX"></label>
+ <label>Me la dejó<input name="boss" list="ac-boss-dl" maxlength="80" value="${orgEsc(a?a.boss||'':'')}" placeholder="Nombre de tu jefe"><datalist id="ac-boss-dl">${bosses.map(b=>`<option value="${orgEsc(b)}">`).join('')}</datalist></label>
+ <label>Se repite<select name="repeat">${Object.entries(ACT_REP).map(([k,v])=>`<option value="${k}" ${(a?a.repeat||'none':'none')===k?'selected':''}>${v}</option>`).join('')}</select></label>
+ <label><span id="ac-start-l">Fecha límite</span><input type="date" name="start" required value="${orgEsc(a?a.start:today)}"></label>
+ <label>Hora (opcional)<input type="time" name="time" value="${orgEsc(a?a.time||'':'')}"></label>
+ <label data-ac-end>Repetir hasta (opcional)<input type="date" name="end" value="${orgEsc(a?a.end||'':'')}"></label>
+ <label>Expediente relacionado (opcional)<select name="caseId"><option value="">Ninguno</option>${d.cases.map(c=>`<option value="${orgEsc(c.id)}" ${a&&a.caseId===c.id?'selected':''}>${orgEsc(c.title)}</option>`).join('')}</select></label>
+ <label class="full">Notas<textarea name="notes" rows="3" maxlength="600" placeholder="Instrucciones o detalles">${orgEsc(a?a.notes||'':'')}</textarea></label>
+ <div class="full"><button type="submit" class="btn">${a?'Guardar cambios':'Guardar actividad'}</button></div></form>`);
+ const f=$('#ac-form'),sync=()=>{const rep=f.elements.repeat.value!=='none';$('#ac-start-l').textContent=rep?'Empieza el':'Fecha límite';f.querySelector('[data-ac-end]').style.display=rep?'':'none'};
+ f.elements.repeat.onchange=sync;sync();
+ f.onsubmit=e=>{e.preventDefault();const v=n=>f.elements[n].value.trim(),all=actList();
+  const rec={title:v('title'),boss:v('boss'),repeat:v('repeat'),start:v('start'),time:v('time'),end:v('repeat')==='none'?'':v('end'),caseId:v('caseId'),notes:v('notes')};
+  if(!rec.title||!rec.start)return;
+  if(a){const t=all.find(x=>x.id===a.id);Object.assign(t,rec)}else all.push({id:'a-'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),done:{},created:orgTodayISO(),...rec});
+  actSaveAll(all);$('#org-modal-backdrop').remove();window.__actDay=rec.repeat==='none'?window.__actDay:window.__actDay;orgRenderActs();if(typeof renderHomeToday==='function'&&$('#home-today'))renderHomeToday()};
+}
+function actICS(){
+ const acts=actList(),today=orgTodayISO(),esc=s=>String(s||'').replace(/\\/g,'\\\\').replace(/;/g,'\;').replace(/,/g,'\\,').replace(/\r?\n/g,'\\n');
+ const dt=iso=>iso.replace(/-/g,''),stamp=new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';
+ const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Clave Publica//Actividades//ES','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Clave Pública'];let n=0;
+ acts.forEach(a=>{
+  const rec=a.repeat&&a.repeat!=='none';if(!rec&&actDone(a,a.start))return;if(rec&&a.end&&a.end<today)return;
+  n++;L.push('BEGIN:VEVENT','UID:act-'+a.id+'@clavepublica','DTSTAMP:'+stamp,'SUMMARY:'+esc(a.title));
+  const desc=[a.boss?'Me la dejó: '+a.boss:'',a.notes||''].filter(Boolean).join('\n');if(desc)L.push('DESCRIPTION:'+esc(desc));
+  if(a.time){const h=a.time.replace(':','')+'00',[hh,mm]=a.time.split(':').map(Number),e=new Date(Date.UTC(2000,0,1,hh,mm+30)),eh=String(e.getUTCHours()).padStart(2,'0')+String(e.getUTCMinutes()).padStart(2,'0')+'00';
+   L.push('DTSTART:'+dt(a.start)+'T'+h,'DTEND:'+dt(a.start)+'T'+eh)}
+  else L.push('DTSTART;VALUE=DATE:'+dt(a.start),'DTEND;VALUE=DATE:'+dt(actAdd(a.start,1)));
+  const until=a.end?';UNTIL='+dt(a.end)+(a.time?'T235959':''):'';
+  const R={daily:'FREQ=DAILY',weekdays:'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',weekly:'FREQ=WEEKLY',monthly:'FREQ=MONTHLY'}[a.repeat];if(R)L.push('RRULE:'+R+until);
+  if(a.time)L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc(a.title),'TRIGGER:-PT15M','END:VALARM');
+  else L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc(a.title),'TRIGGER:PT9H','END:VALARM');
+  if(!rec)L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc('Mañana vence: '+a.title),'TRIGGER:-PT15H','END:VALARM');
+  L.push('END:VEVENT')});
+ L.push('END:VCALENDAR');
+ if(!n){alert('No hay actividades pendientes para enviar al calendario.');return}
+ const blob=new Blob([L.join('\r\n')],{type:'text/calendar;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='Clave_Publica_actividades.ics';document.body.appendChild(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(u)},1500);
+}
+function actsHomeCard(){
+ const acts=actList(),today=orgTodayISO(),s=actStats(acts,today,today),late=actOverdue(acts,today),pend=acts.filter(a=>actOccurs(a,today)&&!actDone(a,today)).sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99'));
+ return `<article class="ht-card"><div class="ht-head"><h3>Mis actividades de hoy</h3><span class="chart-tag">${s.p==null?'—':s.p+'%'}</span></div>${s.t?`<div class="ht-sub">${s.h} de ${s.t} cumplidas${late.length?` · <b class="ac-bad">${late.length} vencida${late.length===1?'':'s'}</b>`:''}</div>`:(late.length?`<div class="ht-sub"><b class="ac-bad">${late.length} vencida${late.length===1?'':'s'}</b></div>`:'')}${pend.length?pend.slice(0,5).map(a=>`<button class="ht-row" data-ht-acts><span class="ht-when">${orgEsc(a.time||'Hoy')}</span><span class="ht-txt"><b>${orgEsc(a.title)}</b><small>${a.boss?orgEsc(a.boss):orgEsc(ACT_REP[a.repeat]||'')}</small></span></button>`).join(''):`<div class="ht-empty">${s.t?'Todo cumplido hoy. Buen trabajo.':'Sin actividades para hoy.'}</div>`}<button class="btn ghost ht-link" data-ht-acts>Ir a Mis actividades</button></article>`;
+}
+
+/* ===== 3.64: sincronización con Supabase (opcional, el guardado local sigue siendo la fuente principal) ===== */
+const SB_CFG='cp_sb_cfg',SB_SESS='cp_sb_sess',SB_META='cp_sync_meta',SB_WU='cp_sync_watchu',WATCH_KEY='clavemx_watch_v1';
+const SB_SQL=`create table if not exists public.cp_state (
+  user_id uuid primary key default auth.uid() references auth.users(id) on delete cascade,
+  data jsonb not null default '{}'::jsonb,
+  rev bigint not null default 1,
+  updated_at timestamptz not null default now()
+);
+alter table public.cp_state enable row level security;
+create policy "cp_state_select" on public.cp_state for select using (auth.uid() = user_id);
+create policy "cp_state_insert" on public.cp_state for insert with check (auth.uid() = user_id);
+create policy "cp_state_update" on public.cp_state for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+create policy "cp_state_delete" on public.cp_state for delete using (auth.uid() = user_id);`;
+const sbj=(k,d)=>{try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}};
+const sbw=(k,v)=>{try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const syncSig=x=>JSON.stringify(x,(k,v)=>k==='_u'?undefined:v);
+function syncStamp(v){
+ if(!v||typeof v!=='object')return;
+ const prev=orgGet(),now=Date.now();v._del=(v._del&&typeof v._del==='object')?v._del:{};
+ for(const col of ['cases','acts']){
+  const pa=Array.isArray(prev[col])?prev[col]:[],na=Array.isArray(v[col])?v[col]:[],pm=new Map(pa.map(x=>[x.id,x]));
+  na.forEach(x=>{const o=pm.get(x.id);if(!o||syncSig(o)!==syncSig(x))x._u=now;else if(o._u)x._u=o._u});
+  const ids=new Set(na.map(x=>x.id));pa.forEach(o=>{if(!ids.has(o.id))v._del[o.id]=now});
+  na.forEach(x=>{if(v._del[x.id]!==undefined&&v._del[x.id]<=(x._u||0))delete v._del[x.id]});
+ }
+ const dsig=o=>JSON.stringify({n:o.orgName,m:o.members,g:o.goals});
+ v._docU=(dsig(prev)!==dsig(v))?now:(prev._docU||v._docU||0);
+}
+(function(){const raw=store.set.bind(store);
+ store.set=function(k,v){
+  if(window.__syncApplying||(k!==ORG_KEY&&k!==WATCH_KEY))return raw(k,v);
+  try{if(k===ORG_KEY)syncStamp(v);else localStorage.setItem(SB_WU,String(Date.now()))}catch(e){console.warn('sync',e)}
+  raw(k,v);
+  try{const m=sbj(SB_META,{});m.dirty=true;sbw(SB_META,m);syncSchedule()}catch(e){}
+ }})();
+function syncMerge(L,R){
+ const lo=L.org,ro=R.org;let org;
+ if(!lo)org=ro;else if(!ro)org=lo;else{
+  org=((lo._docU||0)>=(ro._docU||0))?{...ro,...lo}:{...lo,...ro};
+  const del={...(ro._del||{})};Object.entries(lo._del||{}).forEach(([k,t])=>{del[k]=Math.max(del[k]||0,t)});org._del=del;
+  for(const col of ['cases','acts']){
+   const m=new Map();(lo[col]||[]).forEach(x=>m.set(x.id,[x,null]));(ro[col]||[]).forEach(x=>{const e=m.get(x.id);if(e)e[1]=x;else m.set(x.id,[null,x])});
+   org[col]=[...m.values()].map(([a,b])=>a&&b?((b._u||0)>(a._u||0)?b:a):(a||b)).filter(x=>!(del[x.id]!==undefined&&del[x.id]>=(x._u||0)));
+  }
+  const h=new Map();[...(ro.history||[]),...(lo.history||[])].forEach(e=>h.set(JSON.stringify(e),e));
+  org.history=[...h.values()].sort((a,b)=>String(a.at||'').localeCompare(String(b.at||''))).slice(-400);
+ }
+ const useL=(L.watch_u||0)>=(R.watch_u||0);
+ return {org,watch:(useL?L.watch:R.watch)||L.watch||R.watch||[],watch_u:Math.max(L.watch_u||0,R.watch_u||0)};
+}
+const sbCfg=()=>sbj(SB_CFG,null),sbSess=()=>sbj(SB_SESS,null);
+async function sbReq(path,o){o=o||{};const c=sbCfg();if(!c)throw new Error('Falta configurar la conexión.');
+ const r=await fetch(c.url.replace(/\/$/,'')+path,{method:o.method||'GET',headers:{apikey:c.key,'Content-Type':'application/json',...(o.token?{Authorization:'Bearer '+o.token}:{}),...(o.headers||{})},body:o.body?JSON.stringify(o.body):undefined});
+ let j=null;try{j=await r.json()}catch(e){}return {ok:r.ok,status:r.status,json:j};
+}
+function sbSaveSess(j,email){sbw(SB_SESS,{access_token:j.access_token,refresh_token:j.refresh_token,expires_at:j.expires_at||Math.floor(Date.now()/1000)+(j.expires_in||3600),email:email||(j.user&&j.user.email)||''})}
+async function sbToken(){const s=sbSess();if(!s)throw new Error('Inicia sesión para sincronizar.');
+ if(s.expires_at*1000-60000>Date.now())return s.access_token;
+ const r=await sbReq('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:s.refresh_token}});
+ if(!r.ok||!r.json||!r.json.access_token){sbw(SB_SESS,null);throw new Error('Tu sesión venció. Inicia sesión de nuevo.')}
+ sbSaveSess(r.json,s.email);return r.json.access_token}
+async function sbAuth(mode,email,pw){
+ const r=await sbReq(mode==='up'?'/auth/v1/signup':'/auth/v1/token?grant_type=password',{method:'POST',body:{email,password:pw}});
+ if(!r.ok)throw new Error((r.json&&(r.json.msg||r.json.error_description||r.json.message))||('No se pudo '+(mode==='up'?'crear la cuenta':'iniciar sesión')));
+ if(!r.json||!r.json.access_token)return 'confirm';sbSaveSess(r.json,email);return 'ok'}
+let __syncBusy=false,__syncTimer=null,__syncMsg='',__syncErr=false;
+function syncSchedule(){if(!sbSess())return;clearTimeout(__syncTimer);__syncTimer=setTimeout(()=>syncRun(),2500)}
+function syncSnap(){return {org:store.get(ORG_KEY,null),watch:store.get(WATCH_KEY,[]),watch_u:Number(localStorage.getItem(SB_WU))||0}}
+function syncApply(doc){
+ const old=syncSnap();sbw('cp_sync_prebackup',{at:new Date().toISOString(),...old});
+ window.__syncApplying=true;try{if(doc.org)store.set(ORG_KEY,doc.org);store.set(WATCH_KEY,doc.watch||[]);localStorage.setItem(SB_WU,String(doc.watch_u||0))}finally{window.__syncApplying=false}
+ try{if(typeof orgRender==='function'&&$('#v-o'))orgRender()}catch(e){}
+ try{if($('#home-today'))renderHomeToday()}catch(e){}
+ try{watchRender()}catch(e){}
+}
+function syncStatus(msg,err){__syncMsg=msg||'';__syncErr=!!err;syncPaint()}
+function syncPaint(){
+ const el=$('#sync-status');if(!el)return;
+ const s=sbSess(),m=sbj(SB_META,{});let t='';
+ if(__syncMsg)t=__syncMsg;else if(s&&m.last){const mn=Math.floor((Date.now()-m.last)/6e4);t='Sincronizado '+(mn<1?'hace un momento':mn<60?'hace '+mn+' min':'hace '+Math.floor(mn/60)+' h')}else if(s)t='Sesión iniciada';
+ el.textContent=t?'· '+t:'';el.className='sync-status'+(__syncErr?' err':'');
+}
+async function syncRun(){
+ if(__syncBusy||!sbSess()||!sbCfg())return;__syncBusy=true;syncStatus('Sincronizando…');
+ try{const tok=await sbToken();
+  for(let i=0;i<4;i++){
+   const g=await sbReq('/rest/v1/cp_state?select=data,rev',{token:tok});
+   if(!g.ok)throw new Error(g.status===404||(g.json&&g.json.code==='PGRST205')?'Falta crear la tabla cp_state en Supabase (mira las instrucciones en Sincronización).':((g.json&&(g.json.message||g.json.msg))||'Error '+g.status));
+   const meta=sbj(SB_META,{}),local=syncSnap(),row=g.json&&g.json[0];
+   if(!row){
+    const ins=await sbReq('/rest/v1/cp_state',{method:'POST',token:tok,body:{data:local},headers:{Prefer:'return=representation'}});
+    if(ins.ok&&ins.json&&ins.json[0]){sbw(SB_META,{rev:ins.json[0].rev,sig:syncSig(local),last:Date.now()});break}continue}
+   const remote=row.data||{},revChanged=row.rev!==meta.rev,localChanged=syncSig(local)!==meta.sig;
+   if(!revChanged&&!localChanged){sbw(SB_META,{...meta,dirty:false,last:Date.now()});break}
+   const merged=syncMerge(local,remote);
+   if(syncSig(merged)!==syncSig(local))syncApply(merged);
+   if(syncSig(merged)===syncSig(remote)){sbw(SB_META,{rev:row.rev,sig:syncSig(syncSnap()),last:Date.now()});break}
+   const up=await sbReq('/rest/v1/cp_state?rev=eq.'+row.rev,{method:'PATCH',token:tok,body:{data:merged,rev:row.rev+1,updated_at:new Date().toISOString()},headers:{Prefer:'return=representation'}});
+   if(up.ok&&up.json&&up.json[0]){sbw(SB_META,{rev:up.json[0].rev,sig:syncSig(syncSnap()),last:Date.now()});break}
+  }
+  syncStatus('');
+ }catch(e){syncStatus(String(e&&e.message||e),true)}
+ finally{__syncBusy=false}
+}
+function syncOpen(){
+ const c=sbCfg(),s=sbSess(),m=sbj(SB_META,{});
+ const help=`<details class="sync-help"><summary>¿Cómo configuro Supabase? (una sola vez)</summary><ol><li>Entra a supabase.com, crea una cuenta y un proyecto nuevo (plan gratuito).</li><li>En <b>SQL Editor</b> pega y ejecuta este código (crea tu tabla privada):<pre class="sync-sql">${orgEsc(SB_SQL)}</pre><button type="button" class="mini" id="sync-copy-sql">Copiar código</button></li><li>En <b>Project Settings → API</b> copia la <b>Project URL</b> y la llave <b>anon / publishable</b>, y pégalas en los campos de arriba. La llave pública no abre tus datos: los protege tu inicio de sesión.</li><li>Recomendado: en <b>Authentication → Providers → Email</b> desactiva "Confirm email" (para entrar de inmediato) y, cuando ya hayas creado tu cuenta, desactiva "Allow new users to sign up".</li></ol></details>`;
+ let body;
+ if(!c)body=`<form id="sync-cfg" class="org-form"><label class="full">Project URL<input name="url" required placeholder="https://xxxx.supabase.co" autocomplete="off"></label><label class="full">Llave pública (anon / publishable)<input name="key" required autocomplete="off"></label><div class="full"><button class="btn" type="submit">Guardar y continuar</button></div></form>${help}`;
+ else if(!s)body=`<form id="sync-login" class="org-form"><label class="full">Correo<input type="email" name="email" required autocomplete="username"></label><label class="full">Contraseña (mínimo 6 caracteres)<input type="password" name="pw" required minlength="6" autocomplete="current-password"></label><div class="full sync-btns"><button class="btn" type="submit" data-m="in">Iniciar sesión</button><button class="btn ghost" type="submit" data-m="up">Crear cuenta</button></div><p class="org-note sync-err" id="sync-err"></p></form><p class="org-note">Conectado a ${orgEsc(c.url)}</p><button type="button" class="mini" id="sync-reset">Cambiar conexión</button>${help}`;
+ else body=`<p><b>${orgEsc(s.email||'Sesión iniciada')}</b><br><small>${m.last?'Última sincronización: '+new Date(m.last).toLocaleString('es-MX'):'Aún no se ha sincronizado'}</small></p><p class="org-note sync-err" id="sync-err">${__syncErr?orgEsc(__syncMsg):''}</p><div class="sync-btns"><button class="btn" id="sync-now">Sincronizar ahora</button><button class="btn ghost" id="sync-link">Copiar enlace para otro dispositivo</button><button class="btn ghost" id="sync-out">Cerrar sesión</button></div><p class="org-note">Tus datos se guardan primero en este dispositivo y se copian a tu cuenta. Si cambias algo en el teléfono y en la computadora, se combinan; si el mismo expediente se editó en ambos, gana el cambio más reciente. Antes de aplicar cambios de la nube se guarda una copia local.</p>${help}`;
+ orgModal(`<button class="mini" id="org-modal-close" style="float:right">Cerrar</button><h3>Sincronización</h3><p>Usa tus expedientes y actividades en el teléfono y en la computadora.</p>${body}`);
+ const q=id=>document.getElementById(id);
+ const cp=q('sync-copy-sql');if(cp)cp.onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(SB_SQL):Promise.reject()).then(()=>{cp.textContent='Copiado ✓'}).catch(()=>prompt('Copia el código:',SB_SQL))};
+ const f1=q('sync-cfg');if(f1)f1.onsubmit=e=>{e.preventDefault();let u=f1.elements.url.value.trim().replace(/\/+$/,'');if(!/^https:\/\//.test(u)){alert('La URL debe empezar con https://');return}sbw(SB_CFG,{url:u,key:f1.elements.key.value.trim()});syncOpen()};
+ const rs=q('sync-reset');if(rs)rs.onclick=()=>{sbw(SB_CFG,null);syncOpen()};
+ const f2=q('sync-login');if(f2)f2.querySelectorAll('button[type=submit]').forEach(b=>b.onclick=async ev=>{ev.preventDefault();if(!f2.reportValidity())return;const er=q('sync-err');er.textContent='Conectando…';
+  try{const r=await sbAuth(b.dataset.m,f2.elements.email.value.trim(),f2.elements.pw.value);if(r==='confirm'){er.textContent='Cuenta creada. Revisa tu correo para confirmarla y luego inicia sesión.';return}syncOpen();syncRun()}catch(e){er.textContent=e.message}});
+ const sn=q('sync-now');if(sn)sn.onclick=async()=>{sn.disabled=true;sn.textContent='Sincronizando…';await syncRun();syncOpen()};
+ const so=q('sync-out');if(so)so.onclick=()=>{sbw(SB_SESS,null);sbw(SB_META,null);syncPaint();syncOpen()};
+ const sl=q('sync-link');if(sl)sl.onclick=()=>{const u=location.origin+location.pathname+'#sbcfg='+btoa(JSON.stringify({url:c.url,key:c.key}));(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>{sl.textContent='Enlace copiado ✓'}).catch(()=>prompt('Abre este enlace en tu otro dispositivo:',u))};
+}
+document.addEventListener('click',e=>{if(e.target.closest('[data-sync]')){e.preventDefault();syncOpen()}});
+(function(){
+ try{if(location.hash.startsWith('#sbcfg=')){const j=JSON.parse(atob(location.hash.slice(7)));if(j&&/^https:\/\//.test(j.url)&&j.key){sbw(SB_CFG,{url:j.url,key:j.key});history.replaceState(null,'',location.pathname+location.search);setTimeout(syncOpen,1800)}}}catch(e){}
+ setTimeout(()=>{syncPaint();syncRun()},3500);
+ setInterval(()=>{syncPaint();if(document.visibilityState==='visible'&&sbSess())syncRun()},120000);
+ document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')syncRun()});
+ window.addEventListener('online',()=>syncRun());
+})();
 
 function orgModal(html){const old=$('#org-modal-backdrop');if(old)old.remove();document.body.insertAdjacentHTML('beforeend',`<div class="org-modal-backdrop" id="org-modal-backdrop"><div class="org-modal" role="dialog" aria-modal="true">${html}</div></div>`);$('#org-modal-backdrop').addEventListener('click',e=>{if(e.target.id==='org-modal-backdrop')e.currentTarget.remove()});const x=$('#org-modal-close');if(x)x.onclick=()=>$('#org-modal-backdrop').remove()}
 function orgStageModal(cid){const d=orgGet(),c=d.cases.find(x=>x.id===cid);if(!c)return;const opts='<option value="">Selecciona integrante</option>'+d.members.map(m=>`<option value="${orgEsc(m.id)}" ${m.id===c.analysisBy||m.id===c.openingReviewBy?'selected':''}>${orgEsc(m.name)}</option>`).join('');orgModal(`<button class="mini" id="org-modal-close" style="float:right">Cerrar</button><h3>Fechas y etapas</h3><p>${orgEsc(c.title)}. Captura las fechas publicadas y registra quién realizó cada análisis. Los límites de carga se calculan automáticamente.</p><form id="org-stage-form" class="org-form"><label>Fecha de junta de aclaraciones<input name="juntaDate" type="date" value="${orgEsc(c.juntaDate||'')}"></label><label>Límite para subir junta<input name="juntaDeadline" type="date" readonly value="${orgEsc(c.juntaDeadline||orgDayBefore(c.juntaDate))}"></label><label>Fecha de apertura<input name="openingDate" type="date" value="${orgEsc(c.openingDate||'')}"></label><label>Límite para subir apertura<input name="deadline" type="date" readonly value="${orgEsc(c.deadline||orgDayBefore(c.openingDate))}"></label><div class="org-note-banner full">Los dos límites son independientes y corresponden al día calendario anterior a cada evento.</div><label><span>¿Ya se subió la junta?</span><input name="juntaUploaded" type="checkbox" ${c.juntaUploaded?'checked':''}></label><label><span>¿Ya se subió la documentación de apertura?</span><input name="openingUploaded" type="checkbox" ${c.openingUploaded?'checked':''}></label><label>Fecha del análisis<input name="analysisDate" type="date" value="${orgEsc(c.analysisDate||'')}"></label><label>Quién hizo el análisis<input value="Jorge Coronel" readonly aria-label="Quién hizo el análisis"></label><label>Resultado del análisis<select name="analysisResult"><option value="">Pendiente</option>${['Viable','Viable con observaciones','No viable','Pendiente de información'].map(v=>`<option ${v===c.analysisResult?'selected':''}>${v}</option>`).join('')}</select></label><label class="full">Observaciones del análisis<textarea name="analysisNotes" maxlength="2000">${orgEsc(c.analysisNotes||'')}</textarea></label><label>Fecha del análisis de apertura<input name="openingReviewDate" type="date" value="${orgEsc(c.openingReviewDate||'')}"></label><label>Quién revisó la apertura<input value="Jorge Coronel" readonly aria-label="Quién revisó la apertura"></label><label class="full">Observaciones de apertura<textarea name="openingReviewNotes" maxlength="1500">${orgEsc(c.openingReviewNotes||'')}</textarea></label><label>Fecha del fallo<input name="awardDate" type="date" value="${orgEsc(c.awardDate||'')}"></label><label>Resultado del fallo<select name="awardResult"><option value="">Sin registrar</option>${['Adjudicado','No adjudicado','Desierto','Cancelado','Pendiente'].map(v=>`<option ${v===c.awardResult?'selected':''}>${v}</option>`).join('')}</select></label><label class="full">Notas del fallo<textarea name="awardNotes" maxlength="1500">${orgEsc(c.awardNotes||'')}</textarea></label><label>Fecha de firma del contrato<input name="contractDate" type="date" value="${orgEsc(c.contractDate||'')}"></label><label>Estado del contrato<select name="contractStatus">${['Pendiente','En revisión','Firmado','No aplica'].map(v=>`<option ${v===(c.contractStatus||'Pendiente')?'selected':''}>${v}</option>`).join('')}</select></label><label>Fecha de entrega de fianzas<input name="bondsDate" type="date" value="${orgEsc(c.bondsDate||'')}"></label><label>Estado de las fianzas<select name="bondsStatus">${['Pendiente','En trámite','Entregadas','No aplica'].map(v=>`<option ${v===(c.bondsStatus||'Pendiente')?'selected':''}>${v}</option>`).join('')}</select></label></form><div class="org-modal-actions"><button class="btn ghost" type="button" id="org-modal-cancel">Cancelar</button><button class="btn" type="submit" form="org-stage-form">Guardar cambios</button></div>`);$('#org-modal-cancel').onclick=()=>$('#org-modal-backdrop').remove();const form=$('#org-stage-form');const sync=()=>{form.elements.juntaDeadline.value=orgDayBefore(form.elements.juntaDate.value);form.elements.deadline.value=orgDayBefore(form.elements.openingDate.value)};form.elements.juntaDate.onchange=sync;form.elements.openingDate.onchange=sync;form.onsubmit=e=>{e.preventDefault();const fd=new FormData(e.currentTarget),x=orgGet(),cc=x.cases.find(v=>v.id===cid);if(!cc)return;const oldJunta=cc.juntaDate||'',oldOpening=cc.openingDate||'';for(const k of ['juntaDate','openingDate','analysisDate','analysisResult','analysisNotes','openingReviewDate','openingReviewNotes','awardDate','awardResult','awardNotes','contractDate','contractStatus','bondsDate','bondsStatus'])cc[k]=String(fd.get(k)||'').trim();const self=(x.members||[]).find(m=>m.role==='admin')||(x.members||[])[0];if(self){cc.analysisBy=cc.analysisDate?self.id:'';cc.openingReviewBy=cc.openingReviewDate?self.id:'';cc.tasks.forEach(t=>t.owner=self.id);}cc.juntaUploaded=fd.get('juntaUploaded')==='on';cc.openingUploaded=fd.get('openingUploaded')==='on';if(oldJunta!==cc.juntaDate)cc.juntaUploaded=false;if(oldOpening!==cc.openingDate)cc.openingUploaded=false;cc.juntaDeadline=orgDayBefore(cc.juntaDate);cc.deadline=orgDayBefore(cc.openingDate);if(cc.analysisDate&&!cc.analysisBy){alert('Selecciona quién realizó el análisis.');return}if(cc.analysisBy&&!cc.analysisDate){alert('Registra la fecha del análisis.');return}orgSave(x);$('#org-modal-backdrop').remove();orgRender();if(!$('#v-x').hidden)controlRender()}
@@ -1979,12 +2234,14 @@ function renderHomeToday(){
    <article class="ht-card"><div class="ht-head"><h3>Guardados con fecha próxima</h3><span class="chart-tag">${wev.length}</span></div>${wev.length?wev.slice(0,6).map(e=>evRow(e,`data-ht-url="${esc(cmxUrl(e.r))}"`)).join(''):`<div class="ht-empty">${wl.length?'Ninguno de tus '+wl.length+' guardados tiene fecha en los próximos 7 días.':'Guarda procedimientos para ver aquí sus fechas.'}</div>`}</article>
    <article class="ht-card"><div class="ht-head"><h3>Oportunidades</h3></div><div class="ht-nums"><button class="ht-num" id="ht-ap7"><b>${int(ap7)}</b><small>aperturas en 7 días</small></button><button class="ht-num" id="ht-new"><b>${int(nuevos)}</b><small>publicados en 2 días</small></button></div>
     ${last.length?`<div class="ht-sub">Tus últimos expedientes</div>`+last.map(c=>`<button class="ht-row" data-ht-case="${esc(c.id)}"><span class="ht-when">${orgProgress(c)}%</span><span class="ht-txt"><b>${esc(c.title)}</b><small>${esc(orgCaseStage(c))}</small></span></button>`).join(''):''}
-    ${needBackup?'<div class="ht-alert">Tus expedientes solo viven en este dispositivo. <button class="btn" data-backup>Hacer respaldo</button></div>':''}</article>
+    ${needBackup?'<div class="ht-alert">Tus expedientes solo viven en este dispositivo. <button class="btn" data-backup>Hacer respaldo</button> <button class="btn ghost" data-sync>Sincronizar</button></div>':''}</article>
+   ${actsHomeCard()}
   </section>`;
   const q=$('#gs-q');let tm=null;q.oninput=()=>{clearTimeout(tm);tm=setTimeout(()=>gsRender(q.value),180)};
   el.querySelectorAll('[data-ht-case]').forEach(b=>b.onclick=()=>{window.__orgActiveView='cases';show('x')});
   el.querySelectorAll('[data-ht-url]').forEach(b=>b.onclick=()=>window.open(b.dataset.htUrl,'_blank','noopener'));
   $('#ht-go-x').onclick=()=>{window.__orgActiveView='cases';show('x')};
+  el.querySelectorAll('[data-ht-acts]').forEach(b=>b.onclick=()=>{window.__orgActiveView='acts';show('x')});
   $('#ht-ap7').onclick=()=>goC({es:'act',ord:'ape'});$('#ht-new').onclick=()=>goC({es:'act',ord:'pub'});
 }
 /* Fechas de datos por pestaña */
@@ -2002,7 +2259,7 @@ setInterval(updStamp,1500);
 function backupOpen(){
   const n=Object.keys(localStorage).length;
   orgModal(`<button class="mini" id="org-modal-close" style="float:right">Cerrar</button><h3>Respaldo de tus datos</h3><p>Tus expedientes, guardados y preferencias viven solo en este navegador. Descarga un respaldo para recuperarlos o pasarlos a otro teléfono o a la computadora.</p><div class="bk-actions"><button class="btn" id="bk-export">Descargar respaldo</button><label class="btn ghost bk-file">Restaurar desde archivo<input type="file" id="bk-import" accept=".json,application/json" hidden></label></div><p class="org-note" id="bk-msg">${n} elementos guardados en este navegador.</p>`);
-  $('#bk-export').onclick=()=>{const data={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);data[k]=localStorage.getItem(k)}
+  $('#bk-export').onclick=()=>{const data={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(/^cp_(sb|sync)_/.test(k))continue;data[k]=localStorage.getItem(k)}
     const blob=new Blob([JSON.stringify({app:'ClavePublica',version:1,exportedAt:new Date().toISOString(),data})],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='respaldo_clave_publica_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();store.set('cp_last_backup',Date.now());$('#bk-msg').textContent='Respaldo descargado. Guárdalo en un lugar seguro.'};
   $('#bk-import').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const j=JSON.parse(await f.text());if(j.app!=='ClavePublica'||!j.data||typeof j.data!=='object')throw new Error('formato');const keys=Object.keys(j.data);if(!confirm('Se restaurarán '+keys.length+' elementos y se reemplazarán los datos actuales de este navegador. ¿Continuar?'))return;keys.forEach(k=>{if(typeof j.data[k]==='string')localStorage.setItem(k,j.data[k])});alert('Respaldo restaurado. La plataforma se recargará.');location.reload()}catch(err){$('#bk-msg').textContent='Ese archivo no es un respaldo válido de Clave Pública.'}};
 }
