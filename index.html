@@ -283,7 +283,7 @@ i.w,.xv-stack i.w{background:var(--good)}i.l,.xv-stack i.l{background:var(--bad)
 @media(max-width:520px){.ac-row{grid-template-columns:auto minmax(0,1fr)}.ac-row .ac-btns{grid-column:2}.ac-bars{gap:3px}.ac-bv{font-size:9px}}
 </style>
 </head><body>
-<title>Clave Pública 3.64</title>
+<title>Clave Pública 3.65</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b1220">
 <link rel="icon" href="icon-192.png">
@@ -668,7 +668,7 @@ body.cp-legal-open{overflow:hidden}
 <a data-cp-open="cp-terms" href="#cp-terms">Términos y condiciones</a>
 <a data-cp-open="cp-help" href="#cp-help">Ayuda</a>
 </nav>
-<div class="site-footer-meta"><span>© <span id="cp-current-year"></span> Clave Pública.</span><span>Todos los derechos reservados al titular correspondiente.</span><span>Versión 3.64</span><button type="button" class="foot-link" data-backup>Respaldo de datos</button><button type="button" class="foot-link" data-sync>Sincronización</button><span id="sync-status" class="sync-status"></span></div>
+<div class="site-footer-meta"><span>© <span id="cp-current-year"></span> Clave Pública.</span><span>Todos los derechos reservados al titular correspondiente.</span><span>Versión 3.65</span><button type="button" class="foot-link" data-backup>Respaldo de datos</button><button type="button" class="foot-link" data-sync>Sincronización</button><span id="sync-status" class="sync-status"></span></div>
 </div>
 </footer>
 <section aria-label="Información legal y ayuda" aria-labelledby="cp-legal-title" aria-modal="true" class="cp-legal-panels" hidden="" id="cp-legal-modal" role="dialog">
@@ -1482,7 +1482,12 @@ async function sbToken(){const s=sbSess();if(!s)throw new Error('Inicia sesión 
  sbSaveSess(r.json,s.email);return r.json.access_token}
 async function sbAuth(mode,email,pw){
  const r=await sbReq(mode==='up'?'/auth/v1/signup':'/auth/v1/token?grant_type=password',{method:'POST',body:{email,password:pw}});
- if(!r.ok)throw new Error((r.json&&(r.json.msg||r.json.error_description||r.json.message))||('No se pudo '+(mode==='up'?'crear la cuenta':'iniciar sesión')));
+ if(!r.ok){const m=String((r.json&&(r.json.msg||r.json.error_description||r.json.message))||'');
+  if(/invalid login/i.test(m))throw new Error('Correo o contraseña incorrectos.');
+  if(/signups? (not allowed|are disabled)|not allowed/i.test(m))throw new Error('Los registros están cerrados. Pide acceso al administrador.');
+  if(/already registered/i.test(m))throw new Error('Ese correo ya tiene cuenta. Inicia sesión o usa «Olvidé mi contraseña».');
+  if(/rate limit/i.test(m))throw new Error('Demasiados intentos. Espera unos minutos.');
+  throw new Error(m||('No se pudo '+(mode==='up'?'crear la cuenta':'iniciar sesión')))}
  if(!r.json||!r.json.access_token)return 'confirm';sbSaveSess(r.json,email);return 'ok'}
 let __syncBusy=false,__syncTimer=null,__syncMsg='',__syncErr=false;
 function syncSchedule(){if(!sbSess())return;clearTimeout(__syncTimer);__syncTimer=setTimeout(()=>syncRun(),2500)}
@@ -1525,11 +1530,11 @@ async function syncRun(){
 }
 function syncOpen(){
  const c=sbCfg(),s=sbSess(),m=sbj(SB_META,{});
- const help=`<details class="sync-help"><summary>¿Cómo configuro Supabase? (una sola vez)</summary><ol><li>Entra a supabase.com, crea una cuenta y un proyecto nuevo (plan gratuito).</li><li>En <b>SQL Editor</b> pega y ejecuta este código (crea tu tabla privada):<pre class="sync-sql">${orgEsc(SB_SQL)}</pre><button type="button" class="mini" id="sync-copy-sql">Copiar código</button></li><li>En <b>Project Settings → API</b> copia la <b>Project URL</b> y la llave <b>anon / publishable</b>, y pégalas en los campos de arriba. La llave pública no abre tus datos: los protege tu inicio de sesión.</li><li>Recomendado: en <b>Authentication → Providers → Email</b> desactiva "Confirm email" (para entrar de inmediato) y, cuando ya hayas creado tu cuenta, desactiva "Allow new users to sign up".</li></ol></details>`;
+ const help='';
  let body;
- if(!c)body=`<form id="sync-cfg" class="org-form"><label class="full">Project URL<input name="url" required placeholder="https://xxxx.supabase.co" autocomplete="off"></label><label class="full">Llave pública (anon / publishable)<input name="key" required autocomplete="off"></label><div class="full"><button class="btn" type="submit">Guardar y continuar</button></div></form>${help}`;
- else if(!s)body=`<form id="sync-login" class="org-form"><label class="full">Correo<input type="email" name="email" required autocomplete="username"></label><label class="full">Contraseña (mínimo 6 caracteres)<input type="password" name="pw" required minlength="6" autocomplete="current-password"></label><div class="full sync-btns"><button class="btn" type="submit" data-m="in">Iniciar sesión</button><button class="btn ghost" type="submit" data-m="up">Crear cuenta</button></div><p class="org-note sync-err" id="sync-err"></p></form><p class="org-note">Conectado a ${orgEsc(c.url)}</p><button type="button" class="mini" id="sync-reset">Cambiar conexión</button>${help}`;
- else body=`<p><b>${orgEsc(s.email||'Sesión iniciada')}</b><br><small>${m.last?'Última sincronización: '+new Date(m.last).toLocaleString('es-MX'):'Aún no se ha sincronizado'}</small></p><p class="org-note sync-err" id="sync-err">${__syncErr?orgEsc(__syncMsg):''}</p><div class="sync-btns"><button class="btn" id="sync-now">Sincronizar ahora</button><button class="btn ghost" id="sync-link">Copiar enlace para otro dispositivo</button><button class="btn ghost" id="sync-out">Cerrar sesión</button></div><p class="org-note">Tus datos se guardan primero en este dispositivo y se copian a tu cuenta. Si cambias algo en el teléfono y en la computadora, se combinan; si el mismo expediente se editó en ambos, gana el cambio más reciente. Antes de aplicar cambios de la nube se guarda una copia local.</p>${help}`;
+ if(!c)body=`<form id="sync-cfg" class="org-form"><label class="full">Project URL<input name="url" required placeholder="https://xxxx.supabase.co" autocomplete="off"></label><label class="full">Llave pública (anon / publishable)<input name="key" required autocomplete="off"></label><div class="full"><button class="btn" type="submit">Guardar y continuar</button></div></form>`;
+ else if(!s)body=`<form id="sync-login" class="org-form"><label class="full">Correo<input type="email" name="email" required autocomplete="username"></label><label class="full">Contraseña (mínimo 6 caracteres)<input type="password" name="pw" required minlength="6" autocomplete="current-password"></label><div class="full sync-btns"><button class="btn" type="submit" data-m="in">Iniciar sesión</button><button class="btn ghost" type="submit" data-m="up">Crear cuenta</button><button class="btn ghost" type="button" id="sync-forgot">Olvidé mi contraseña</button></div><p class="org-note sync-err" id="sync-err"></p></form><p class="org-note">Conectado a ${orgEsc(c.url)}</p><button type="button" class="mini" id="sync-reset">Cambiar conexión</button>`;
+ else body=`<p><b>${orgEsc(s.email||'Sesión iniciada')}</b><br><small>${m.last?'Última sincronización: '+new Date(m.last).toLocaleString('es-MX'):'Aún no se ha sincronizado'}</small></p><p class="org-note sync-err" id="sync-err">${__syncErr?orgEsc(__syncMsg):''}</p><div class="sync-btns"><button class="btn" id="sync-now">Sincronizar ahora</button><button class="btn ghost" id="sync-link">Copiar enlace para otro dispositivo</button><button class="btn ghost" id="sync-out">Cerrar sesión</button></div><p class="org-note">Tus datos se guardan primero en este dispositivo y se copian a tu cuenta. Si cambias algo en el teléfono y en la computadora, se combinan; si el mismo expediente se editó en ambos, gana el cambio más reciente. Antes de aplicar cambios de la nube se guarda una copia local.</p>`;
  orgModal(`<button class="mini" id="org-modal-close" style="float:right">Cerrar</button><h3>Sincronización</h3><p>Usa tus expedientes y actividades en el teléfono y en la computadora.</p>${body}`);
  const q=id=>document.getElementById(id);
  const cp=q('sync-copy-sql');if(cp)cp.onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(SB_SQL):Promise.reject()).then(()=>{cp.textContent='Copiado ✓'}).catch(()=>prompt('Copia el código:',SB_SQL))};
@@ -1537,12 +1542,25 @@ function syncOpen(){
  const rs=q('sync-reset');if(rs)rs.onclick=()=>{sbw(SB_CFG,null);syncOpen()};
  const f2=q('sync-login');if(f2)f2.querySelectorAll('button[type=submit]').forEach(b=>b.onclick=async ev=>{ev.preventDefault();if(!f2.reportValidity())return;const er=q('sync-err');er.textContent='Conectando…';
   try{const r=await sbAuth(b.dataset.m,f2.elements.email.value.trim(),f2.elements.pw.value);if(r==='confirm'){er.textContent='Cuenta creada. Revisa tu correo para confirmarla y luego inicia sesión.';return}syncOpen();syncRun()}catch(e){er.textContent=e.message}});
+ const fg=q('sync-forgot');if(fg)fg.onclick=async()=>{const er=q('sync-err'),em=f2.elements.email.value.trim();if(!em){er.textContent='Escribe tu correo arriba y vuelve a tocar «Olvidé mi contraseña».';return}er.textContent='Enviando…';
+  try{const r=await sbReq('/auth/v1/recover?redirect_to='+encodeURIComponent(location.origin+location.pathname),{method:'POST',body:{email:em}});er.textContent=r.ok?'Si el correo tiene cuenta, te enviamos un enlace para crear una contraseña nueva. Revisa tu bandeja y el spam.':'No se pudo enviar el correo ('+((r.json&&(r.json.msg||r.json.message))||r.status)+').'}catch(e){er.textContent=e.message}};
  const sn=q('sync-now');if(sn)sn.onclick=async()=>{sn.disabled=true;sn.textContent='Sincronizando…';await syncRun();syncOpen()};
  const so=q('sync-out');if(so)so.onclick=()=>{sbw(SB_SESS,null);sbw(SB_META,null);syncPaint();syncOpen()};
  const sl=q('sync-link');if(sl)sl.onclick=()=>{const u=location.origin+location.pathname+'#sbcfg='+btoa(JSON.stringify({url:c.url,key:c.key}));(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>{sl.textContent='Enlace copiado ✓'}).catch(()=>prompt('Abre este enlace en tu otro dispositivo:',u))};
 }
 document.addEventListener('click',e=>{if(e.target.closest('[data-sync]')){e.preventDefault();syncOpen()}});
+function syncRecovery(h){
+ const q=new URLSearchParams(h.replace(/^#/,'')),tok=q.get('access_token');if(!tok)return;
+ history.replaceState(null,'',location.pathname+location.search);
+ orgModal(`<h3>Crear contraseña nueva</h3><p>Escribe la contraseña nueva para tu cuenta.</p><form id="sync-newpw" class="org-form"><label class="full">Contraseña nueva (mínimo 6 caracteres)<input type="password" name="pw" required minlength="6" autocomplete="new-password"></label><div class="full"><button class="btn" type="submit">Guardar contraseña</button></div><p class="org-note sync-err" id="sync-err"></p></form>`);
+ const f=document.getElementById('sync-newpw');f.onsubmit=async e=>{e.preventDefault();const er=document.getElementById('sync-err');er.textContent='Guardando…';
+  try{const r=await sbReq('/auth/v1/user',{method:'PUT',token:tok,body:{password:f.elements.pw.value}});
+   if(!r.ok)throw new Error((r.json&&(r.json.msg||r.json.message))||'No se pudo cambiar la contraseña.');
+   sbSaveSess({access_token:tok,refresh_token:q.get('refresh_token')||'',expires_in:+q.get('expires_in')||3600},(r.json&&r.json.email)||'');
+   document.getElementById('org-modal-backdrop').remove();syncPaint();syncRun();alert('Contraseña cambiada. Ya iniciaste sesión.')}catch(x){er.textContent=x.message}}
+}
 (function(){
+ try{if(location.hash.includes('type=recovery')&&location.hash.includes('access_token=')&&sbCfg())setTimeout(()=>syncRecovery(location.hash),1800)}catch(e){}
  try{if(location.hash.startsWith('#sbcfg=')){const j=JSON.parse(atob(location.hash.slice(7)));if(j&&/^https:\/\//.test(j.url)&&j.key){sbw(SB_CFG,{url:j.url,key:j.key});history.replaceState(null,'',location.pathname+location.search);setTimeout(syncOpen,1800)}}}catch(e){}
  setTimeout(()=>{syncPaint();syncRun()},3500);
  setInterval(()=>{syncPaint();if(document.visibilityState==='visible'&&sbSess())syncRun()},120000);
