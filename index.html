@@ -264,6 +264,11 @@ i.w,.xv-stack i.w{background:var(--good)}i.l,.xv-stack i.l{background:var(--bad)
 html.cp-locked #cp-gate{display:grid}
 html.cp-locked body>*:not(#cp-gate):not(script):not(style){display:none!important}
 html.cp-locked body{overflow:hidden}
+html.cp-boot{background:#0a121d}
+html.cp-boot body>*:not(script):not(style){visibility:hidden}
+html.cp-boot::before{content:"Clave Pública";position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;background:#0a121d;color:#e8f0f8;font:600 22px/1 system-ui,-apple-system,'Segoe UI',sans-serif;padding-bottom:84px;letter-spacing:.2px}
+html.cp-boot::after{content:"";position:fixed;left:50%;top:50%;width:30px;height:30px;margin:-4px 0 0 -15px;border:3px solid #1f3a44;border-top-color:#3fd6b6;border-radius:50%;z-index:2147483001;animation:cpspin .8s linear infinite}
+@keyframes cpspin{to{transform:rotate(360deg)}}
 #cp-gate{position:fixed;inset:0;z-index:2147483000;place-items:center;padding:20px;overflow:auto;color:#e8f1f5;font-family:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12414a 0%,transparent 60%),radial-gradient(900px 500px at 100% 110%,#0f3a33 0%,transparent 55%),#0b1220}
 .cpg-load{position:fixed;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,transparent,#43e0b5,transparent);background-size:40% 100%;background-repeat:no-repeat;animation:cpgbar 1.1s linear infinite}
 @keyframes cpgbar{from{background-position:-40% 0}to{background-position:140% 0}}
@@ -321,7 +326,7 @@ html.cp-locked body{overflow:hidden}
 </style>
 </head><body>
 <script>window.CP_CONFIG=Object.assign({url:"https://wduengxwzwznndvbyrfq.supabase.co",key:"sb_publishable_UQqCwe920bgAgI5mMdxEbg_Zhfq1kMN",env:"produccion",modo:"personal"},window.CP_CONFIG||{});</script>
-<script>(function(){var c=document.documentElement.classList;try{var s=JSON.parse(localStorage.getItem('cp_sb_sess')||'null');if(!s||!(s.access_token||s.refresh_token))c.add('cp-locked')}catch(e){c.add('cp-locked')}var h=location.hash;if((/access_token=/.test(h)&&/type=(recovery|invite|signup|magiclink|email_change)/.test(h))||/error_code=/.test(h))c.add('cp-locked')})();</script>
+<script>(function(){var c=document.documentElement.classList;try{var s=JSON.parse(localStorage.getItem('cp_sb_sess')||'null');if(!s||!(s.access_token||s.refresh_token))c.add('cp-locked')}catch(e){c.add('cp-locked')}var h=location.hash;if((/access_token=/.test(h)&&/type=(recovery|invite|signup|magiclink|email_change)/.test(h))||/error_code=/.test(h))c.add('cp-locked');if(!c.contains('cp-locked')){c.add('cp-boot');setTimeout(function(){c.remove('cp-boot')},12000)}})();</script>
 <div id="cp-gate" role="dialog" aria-modal="true" aria-label="Iniciar sesión en Clave Pública">
 <div class="cpg-load" id="cpg-load" aria-hidden="true"></div>
 <main class="cpg-wrap">
@@ -3013,6 +3018,7 @@ CP.switchScope=async function(scope){
  try{const bk={scope:d.scope,at:new Date().toISOString(),org:store.get(ORG_KEY,null),watch:store.get(WATCH_KEY,[])};if(bk.org)LS('cp_scope_bk_'+(d.scope||'x').slice(0,8),JSON.stringify(bk))}catch(e){}
  clearLocalData();LS(K_SC,scope);LS(K_DATA,CP.uid+'|'+scope);location.reload();return true};
 /* ---------- arranque ---------- */
+function endBoot(){const r=document.documentElement;if(!r.classList.contains('cp-boot'))return;let n=0;const iv=setInterval(()=>{const h=$q('#v-h');const tx=h&&!h.hidden?(h.textContent||'').trim():'x';const loading=!tx||/Cargando el panel/.test(tx);if(!loading||++n>120){clearInterval(iv);requestAnimationFrame(()=>r.classList.remove('cp-boot'))}},80)}
 const PERSONAL=((window.CP_CONFIG||{}).modo)==='personal';
 async function bootPersonal(){
  const s=sbSess();CP.uid=uidOf(s.access_token);
@@ -3024,6 +3030,7 @@ async function bootPersonal(){
  CP.scope='p';CP.mem=null;CP.co=null;CP.perms=new Set();CP.ready=true;
  paintShell();applyPerms();syncRun();
  try{if(typeof loadPanel==='function'&&!$q('#v-h').hidden)hookHome()}catch(e){}
+ endBoot();
 }
 async function boot(){
  const s=sbSess();if(!s)return;CP.uid=uidOf(s.access_token);
@@ -3054,8 +3061,9 @@ async function boot(){
  const cur=($q('[role=tab][aria-selected=true]')||{}).id;if(cur&&'edgsm'.includes(cur.slice(4)))renderView(cur.slice(4));
  try{if(typeof loadPanel==='function'&&!$q('#v-h').hidden)hookHome()}catch(e){}
  if(CP.co&&CP.co.status==='suspendida')toast('La empresa está suspendida. Contacta a Clave Pública.',true);
+ endBoot();
 }
-function paintFatal(m){const h=$q('#v-h');if(h)h.insertAdjacentHTML('afterbegin','<div class="c3-bn" style="margin-bottom:14px"><b>Modo básico.</b> '+E(m)+'</div>')}
+function paintFatal(m){document.documentElement.classList.remove('cp-boot');const h=$q('#v-h');if(h)h.insertAdjacentHTML('afterbegin','<div class="c3-bn" style="margin-bottom:14px"><b>Modo básico.</b> '+E(m)+'</div>')}
 /* ---------- shell ---------- */
 function paintShell(){
  if(PERSONAL){document.title='Clave Pública 3.71'}
